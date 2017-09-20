@@ -23,7 +23,7 @@ int main()
 	//Step 2. Define variables
 
 	short cnt1, cnt2;
-	long double total;
+	long double total = 0;
 	
 	//Step 3. Define highest
 	long highest;
@@ -32,21 +32,33 @@ int main()
 	   element of dArr then display the values of dArr*/
 	srand((double)time (NULL));
 
+	cout << "The values of the double array are ";
 
 	for (short i = 0; i < SIZE; i++) {
 		dArr[i] = rand();
-		cout << dArr[i] << ", ";
+		cout << dArr[i] << " ";
 	}
 
 	// Step 5. Add up the elemnts of dArr into total
 	
-	for (short t = 0; t < SIZE; t++) {
+	 for (short t = 0; t < SIZE; t++) {
 		total += dArr[t];
 	}
-
-	cout << total << endl;
-
+	 // Step 6. Print the total and the average of the double array
+	 cout << "\nThe total of the double array is " << total << endl;
+	 cout << "The average of the double array is " << double(total / SIZE) << endl;
+	
 	cout << "\n";
+
+	// Step 7. Assign highest to the highest value in lArr
+	for (cnt1 = 1, highest = lArr[0]; cnt1 < 7; cnt1++) {
+		if (lArr[cnt1] > highest) {
+			highest = lArr[cnt1];
+		}
+	}
+
+	// Step 8. Display highest
+	cout << "\nThe highest value in lArr is " << highest << endl;
 
 	system("Pause");
 
