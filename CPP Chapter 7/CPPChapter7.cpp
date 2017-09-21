@@ -18,7 +18,7 @@ int main()
 	double dArr[SIZE];
 	long lArr[7] = {100000,134567,123456,9,-234567,-1,123489};
 	int iArr[3][5];
-	char Sname[30]{'T','e','r','r','y'};
+	char Sname[30]{"Terry"};
 
 	//Step 2. Define variables
 
@@ -40,7 +40,6 @@ int main()
 	}
 
 	// Step 5. Add up the elemnts of dArr into total
-	
 	 for (short t = 0; t < SIZE; t++) {
 		total += dArr[t];
 	}
@@ -60,7 +59,70 @@ int main()
 	// Step 8. Display highest
 	cout << "\nThe highest value in lArr is " << highest << endl;
 
-	system("Pause");
+	/* Step 9. Put a random number no less than 1 and no more
+	   than 53 into each element of iArr */
+
+	cout << "\n";
+
+	srand((unsigned)time(NULL));
+
+	for (short c = 0; c < 3; c++) {
+		for (short r = 0; r < 5; r++) {
+			iArr[c][r] = (rand() % 52) + 1;
+		}
+	}
+
+	// Step 10. Print the elements of iArr with 3 rows and 5 columns
+	cnt2 = 0;
+
+	for (short a = 0; a < 3; a++) {
+		for (short b = 0; b < 5; b++) {
+			cout << iArr[a][b] << setw(6);
+			cnt2++;
+			if (cnt2 >= 5) {
+				cout << "\n";
+				cnt2 = 0;
+			}
+		}
+	}
+
+	// Step 11. Print the two dimensional array iArr column by column
+	cnt2 = 0;
+	cout << "\n";
+	
+	for (short a = 0; a < 5; a++) {
+		for (short b = 0; b < 3; b++) {
+			cout << iArr[b][a] << setw(6);
+			cnt2++;
+			if (cnt2 >= 3) {
+				cout << "\n";
+				cnt2 = 0;
+			}
+		}
+	}
+
+	// Step 12. Type another name into Sname
+	cout << "\nEnter another name: ";
+	cin.getline(Sname, 30);
+
+	// Step 13. Print the ASCII value of each character in the char array, one per line
+	short val = 0;
+
+	cout << "The ASCII values of the characters in the char array are:\n";
+
+	while (Sname[val] != '\0') {
+		cout << int(Sname[val]) << "\n";
+		val++;
+	}
+
+	// Step 14. Make Sname have the name "Albert Einstein" by using strcpy_s
+
+	strcpy_s(Sname, 30, "Albert Einstein");
+
+	// Step 15. Print the ASCII value of the 12th character in Sname
+	cout << "\nThe ASCII value of the 12th character in Sname is " << int(Sname[11]) << "\n" << endl;
+
+	system("Pause"); 
 
     return 0;
 }
