@@ -122,6 +122,36 @@ int main()
 	// Step 15. Print the ASCII value of the 12th character in Sname
 	cout << "\nThe ASCII value of the 12th character in Sname is " << int(Sname[11]) << "\n" << endl;
 
+	//=====================================
+	//Chapter 9
+
+	// Step 16. Define a pointer to a double, pdArr
+
+	double *pdArr = NULL;
+
+	// Step 17. Assign the address of dArr to pdArr
+
+	pdArr = dArr;
+
+	// Step 18. Print out the array elements with tthe name dArr and subscript notation
+
+	for (short m = 0; m < SIZE; m++) {
+		cout << dArr[m] << " ";
+	}
+
+	cout << "\n\n";
+
+	// Step 19. Print out the elements of the array with the name pdArr and pointer notation
+
+	for (short y = 0; y < SIZE; y++) {
+		cout << *(pdArr + y) << " ";
+	}
+
+	cout << "\n";
+
+
+
+
 	system("Pause"); 
 
     return 0;
